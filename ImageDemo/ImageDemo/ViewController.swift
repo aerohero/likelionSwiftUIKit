@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             // 스택 뷰 제약조건 설정
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+//            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20),
             
             // 중요: 스택 뷰의 너비를 스크롤 뷰의 너비에 맞춤 (패딩 고려)
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         
         // 사각형 만들기
         let squareView = UIView()
-        let squareSize: CGFloat = 100
+        let squareSize: CGFloat = 80
         
         squareView.translatesAutoresizingMaskIntoConstraints = false
         squareView.backgroundColor = .blue
@@ -92,9 +92,6 @@ class ViewController: UIViewController {
         
         // 스택 뷰에 컨테이너 뷰 추가
         stackView.addArrangedSubview(containerView)
-        
-        // 컨테이너뷰 제약조건 활성화
-        containerView.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
         // 제목 레이블과, 원, 사각형의 제약조건 설정
         NSLayoutConstraint.activate([
@@ -135,6 +132,7 @@ class ViewController: UIViewController {
         imageView.image = UIImage(named: "car")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         containerView.addSubview(imageView)
         
         // 스택 뷰에 컨테이너 뷰 추가
