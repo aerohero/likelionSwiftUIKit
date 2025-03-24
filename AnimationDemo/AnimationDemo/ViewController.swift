@@ -43,12 +43,41 @@ class ViewController: UIViewController {
     ])
   }
   
+  // 실습 1
+//  func startAnimation() {
+//    UIView.animate(withDuration: 1.0) {
+//      self.animationView.frame.origin.x += 100
+//      self.animationView.frame.origin.y += 50
+//    }
+//    self.animationView.layer.cornerRadius = 50
+//  }
+  
+  // 실습 2
   func startAnimation() {
-    UIView.animate(withDuration: 1.0) {
-      self.animationView.frame.origin.x += 100
-      self.animationView.frame.origin.y += 50
-    }
-    self.animationView.layer.cornerRadius = 50
+    UIView.animate(withDuration: 1, animations: {
+      self.animationView.transform = self.animationView.transform.rotated(by: .pi / 4)
+    }, completion: { _ in
+      UIView.animate(withDuration: 1) {
+        self.animationView.backgroundColor = .systemRed
+      } completion: { _ in
+        UIView.animate(withDuration: 1) {
+          //          self.animationView.frame.origin.x += 100
+          //          self.animationView.frame.origin.y += 50
+        } completion: { _ in
+          // 현재 상태에 따라 확대 또는 축소
+          if self.animationView.transform == .identity {
+            UIView.animate(withDuration: 1) {
+              self.animationView.transform = CGAffineTransform(scaleX: 2, y: 2)
+            }
+          } else {
+            UIView.animate(withDuration: 1.0) {
+              self.animationView.transform = .identity
+            }
+          }
+        }
+      }
+    })
+//                   self.animationView.layer.cornerRadius = 50
   }
 }
 
