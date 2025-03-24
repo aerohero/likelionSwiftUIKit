@@ -47,7 +47,7 @@ class ViewController: UIViewController {
   
   func configureNavigation() {
     title = "Collection View"
-    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.prefersLargeTitles = false
     
     let searchController = UISearchController(searchResultsController: nil)
     navigationItem.searchController = searchController
