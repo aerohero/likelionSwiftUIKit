@@ -10,6 +10,9 @@ import CoreLocation
 
 class AddJournalEntryViewController: UIViewController {
   
+  @IBOutlet weak var getLocationSwitch: UISwitch!
+  @IBOutlet weak var getLocationSwitchLabel: UILabel!
+  
   @IBOutlet weak var saveButton: UIBarButtonItem!
   
   @IBOutlet weak var titleTextField: UITextField!
@@ -33,6 +36,15 @@ class AddJournalEntryViewController: UIViewController {
     // 위치 정보 사용을 위한 설정
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
+  }
+  
+  @IBAction func getLocationSwitchValueChanged(_ sender: Any) {
+    if getLocationSwitch.isOn {
+          getLocationSwitchLabel.text = "Getting location..."
+          locationManager.requestLocation()
+        } else {
+          getLocationSwitchLabel.text = "Get Location"
+        }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -100,6 +112,7 @@ extension AddJournalEntryViewController: CLLocationManagerDelegate {
     // TODO: 위치 정보 업데이트
     guard let location = locations.first else { return }
     currentLocation = location
+    getLocationSwitchLabel.text = "Location: \(location.coordinate.latitude), \(location.coordinate.longitude)"
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
