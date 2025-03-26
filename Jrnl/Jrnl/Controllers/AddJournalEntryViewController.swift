@@ -31,7 +31,7 @@ class AddJournalEntryViewController: UIViewController {
     //    bodyTextView.delegate = self
     
     // DK: 없어도 되나?
-//    updateSaveButtonState()
+    //    updateSaveButtonState()
     
     // 위치 정보 사용을 위한 설정
     locationManager.delegate = self
@@ -40,11 +40,11 @@ class AddJournalEntryViewController: UIViewController {
   
   @IBAction func getLocationSwitchValueChanged(_ sender: Any) {
     if getLocationSwitch.isOn {
-          getLocationSwitchLabel.text = "Getting location..."
-          locationManager.requestLocation()
-        } else {
-          getLocationSwitchLabel.text = "Get Location"
-        }
+      getLocationSwitchLabel.text = "Getting location..."
+      locationManager.requestLocation()
+    } else {
+      getLocationSwitchLabel.text = "Get Location"
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
