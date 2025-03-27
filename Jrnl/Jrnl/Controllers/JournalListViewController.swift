@@ -12,6 +12,7 @@ class JournalListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var sampleJournalEntryData = SampleJournalEntryData()
+  var selectedJournalEntry: JournalEntry?
   
   override func viewDidLoad() {
     super.viewDidLoad()

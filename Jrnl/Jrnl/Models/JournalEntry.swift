@@ -7,8 +7,10 @@
 
 import UIKit
 // UIKit 안에 Foundation 있다.
+import MapKit
 
-class JournalEntry {
+class JournalEntry: NSObject, MKAnnotation {
+  
   let date: Date
   let rating: Int
   let entryTitle: String
@@ -29,6 +31,22 @@ class JournalEntry {
     self.latitude = latitude
     self.longitude = longitude
   }
+  
+  // MARK: - MKAnnotation
+  var title: String? {
+    date.formatted(.dateTime.month().day().year())
+  }
+  
+  var subtitle: String? {
+    entryTitle
+  }
+  
+  var coordinate: CLLocationCoordinate2D {
+    guard let latitude = latitude, let longitude = longitude else {
+      return CLLocationCoordinate2D()
+    }
+    return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+  }
 }
 
 struct SampleJournalEntryData {
@@ -41,7 +59,7 @@ struct SampleJournalEntryData {
     guard let journalEntry1 = JournalEntry(rating: 5, title: "Good", body: "Today is a good day", photo: photo1) else {
       fatalError("Unable to instantiate journalEntry1")
     }
-    guard let journalEntry2 = JournalEntry(rating: 0, title: "Bad", body: "Today is a bad day", photo: photo2) else {
+    guard let journalEntry2 = JournalEntry(rating: 0, title: "Bad", body: "Today is a bad day", photo: photo2, latitude: 37.3318, longitude: -122.0312) else {
       fatalError("Unable to instantiate journalEntry2")
     }
     guard let journalEntry3 = JournalEntry(rating: 3, title: "Ok", body: "Today is an Ok day", photo: photo3) else {
