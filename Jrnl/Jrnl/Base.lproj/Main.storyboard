@@ -63,7 +63,7 @@
                                             <outlet property="dateLabel" destination="rO9-4r-GCX" id="avL-27-zOt"/>
                                             <outlet property="photoImageView" destination="hP5-Co-Y4l" id="dwM-ZT-teO"/>
                                             <outlet property="titleLabel" destination="Bir-6t-tdh" id="m44-kl-gXd"/>
-                                            <segue destination="tRy-mO-lLu" kind="show" id="Y61-by-Cle"/>
+                                            <segue destination="tRy-mO-lLu" kind="show" identifier="showDetail" id="Y61-by-Cle"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -237,7 +237,7 @@
         <!--Entry Detail-->
         <scene sceneID="Ufi-wS-mMt">
             <objects>
-                <tableViewController id="tRy-mO-lLu" sceneMemberID="viewController">
+                <tableViewController id="tRy-mO-lLu" customClass="JournalEntryDetailViewController" customModule="Jrnl" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LXD-9N-WrR">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,6 +392,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entry Detail" id="C8B-RJ-952"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="cSC-pS-gOm" id="D38-yE-zYt"/>
+                        <outlet property="dateLabel" destination="eza-6v-ltk" id="skO-5P-F1S"/>
+                        <outlet property="mapImageView" destination="uq1-WJ-i5y" id="gfv-hW-x0Q"/>
+                        <outlet property="photoImageView" destination="bjD-rs-6Bp" id="BsC-Kl-7hL"/>
+                        <outlet property="titleLabel" destination="H2f-L1-i7W" id="Nsg-iM-U8W"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DN-DU-ezh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
