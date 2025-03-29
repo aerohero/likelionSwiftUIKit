@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   
   let locationManager = CLLocationManager()
-  var sampleJournalEntryData = SampleJournalEntryData()
+  
   var selectedJournalEntry: JournalEntry?
   
   override func viewDidLoad() {
@@ -27,9 +27,7 @@ class MapViewController: UIViewController {
     self.navigationItem.title = "Loading..."
     locationManager.requestLocation()
     
-    // 샘플 데이터 생성 & 지도에 표시
-    sampleJournalEntryData.createSampleJournalEntryData()
-    mapView.addAnnotations(sampleJournalEntryData.journalEntries)
+    
   }
   
   // MARK: - Navigation
@@ -53,6 +51,8 @@ extension MapViewController: CLLocationManagerDelegate {
       let region = MKCoordinateRegion(center: coordinate, span: span)
       mapView.setRegion(region, animated: true)
       self.navigationItem.title = "Map"
+      
+      mapView.addAnnotations(SharedData.shared.getAllJournalEntries())
     }
   }
   
