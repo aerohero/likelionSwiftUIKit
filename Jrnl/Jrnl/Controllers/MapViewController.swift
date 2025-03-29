@@ -26,7 +26,7 @@ class MapViewController: UIViewController {
     locationManager.requestWhenInUseAuthorization()
     self.navigationItem.title = "Loading..."
     locationManager.requestLocation()
-    
+    SharedData.shared.loadJournalEntriesData()
     
   }
   
