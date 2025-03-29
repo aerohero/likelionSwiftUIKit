@@ -74,6 +74,21 @@ class AddJournalEntryViewController: UIViewController,
     }
   }
   
+  // MARK: - Actions
+  @IBAction func getPhoto(_ sender: UITapGestureRecognizer) {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    
+#if targetEnvironment(simulator)
+    imagePickerController.sourceType = .photoLibrary
+#else
+    imagePickerController.sourceType = .camera
+    imagePickerController.showsCameraControls = true
+#endif
+    
+    present(imagePickerController, animated: true)
+  }
+  
   // MARK: - Methods
   func updateSaveButtonState() {
     let titleText = titleTextField.text ?? ""
@@ -123,10 +138,10 @@ class AddJournalEntryViewController: UIViewController,
   func textFieldDidEndEditing(_ textField: UITextField) {
     updateSaveButtonState()
   }
-
-
+  
+  
   // MARK: - UITextViewDelegate
-
+  
   // 텍스트 뷰가 편집을 시작할 때 호출
   func textViewDidBeginEditing(_ textView: UITextView) {
     saveButton.isEnabled = false
@@ -143,10 +158,10 @@ class AddJournalEntryViewController: UIViewController,
   func textViewDidEndEditing(_ textView: UITextView) {
     updateSaveButtonState()
   }
-
-
-// MARK: - CLLocationManagerDelegate
-
+  
+  
+  // MARK: - CLLocationManagerDelegate
+  
   func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
     switch manager.authorizationStatus {
     case .authorizedWhenInUse:
@@ -178,18 +193,18 @@ class AddJournalEntryViewController: UIViewController,
   }
   
   // MARK: - UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-      guard let selectedImage = info[.originalImage] as? UIImage else {
-        fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-      }
-      let smallerImage = selectedImage.preparingThumbnail(
-        of: CGSize(width: 200, height: 200)
-      )
-      photoImageView.image = smallerImage
-      dismiss(animated: true, completion: nil)
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let selectedImage = info[.originalImage] as? UIImage else {
+      fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
     }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-      dismiss(animated: true, completion: nil)
-    }
+    let smallerImage = selectedImage.preparingThumbnail(
+      of: CGSize(width: 200, height: 200)
+    )
+    photoImageView.image = smallerImage
+    dismiss(animated: true, completion: nil)
+  }
+  
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    dismiss(animated: true, completion: nil)
+  }
 }

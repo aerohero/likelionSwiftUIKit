@@ -25,5 +25,9 @@
 	<string>This app uses your location for journal entries.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app uses your location for journal entries.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>저널 엔트리 생성을 위해 카메라를 사용합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>저널 엔트리 생성을 위해 포토 라이브러리를 사용합니다.</string>
 </dict>
 </plist>
