@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class JournalEntry: NSObject, MKAnnotation, Codable {
-  
+  var id: UUID = UUID()
   let dateString: String
   let rating: Int
   let entryTitle: String
