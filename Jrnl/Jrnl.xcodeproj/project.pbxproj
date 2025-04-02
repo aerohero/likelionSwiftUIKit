@@ -6,11 +6,60 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		14C4801C2D9CC8BA000D0EB0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C4801B2D9CC8BA000D0EB0 /* WidgetKit.framework */; };
+		14C4801E2D9CC8BA000D0EB0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C4801D2D9CC8BA000D0EB0 /* SwiftUI.framework */; };
+		14C480292D9CC8BC000D0EB0 /* JrnlWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 14C480192D9CC8B9000D0EB0 /* JrnlWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14C480272D9CC8BC000D0EB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14DE74CF2D923B6B0081F2E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C480182D9CC8B9000D0EB0;
+			remoteInfo = JrnlWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14C4802A2D9CC8BC000D0EB0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				14C480292D9CC8BC000D0EB0 /* JrnlWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		14C480192D9CC8B9000D0EB0 /* JrnlWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JrnlWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C4801B2D9CC8BA000D0EB0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		14C4801D2D9CC8BA000D0EB0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		14C480302D9CCB2A000D0EB0 /* JrnlWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JrnlWidgetExtension.entitlements; sourceTree = "<group>"; };
 		14DE74D72D923B6B0081F2E7 /* Jrnl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jrnl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		14C4802E2D9CC8BC000D0EB0 /* Exceptions for "JrnlWidget" folder in "JrnlWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 14C480182D9CC8B9000D0EB0 /* JrnlWidgetExtension */;
+		};
+		14C480322D9CCBF0000D0EB0 /* Exceptions for "Jrnl" folder in "JrnlWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/JournalEntry.swift,
+				Models/SharedData.swift,
+			);
+			target = 14C480182D9CC8B9000D0EB0 /* JrnlWidgetExtension */;
+		};
 		14DE74E92D923B6C0081F2E7 /* Exceptions for "Jrnl" folder in "Jrnl" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -21,10 +70,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		14C4801F2D9CC8BA000D0EB0 /* JrnlWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				14C4802E2D9CC8BC000D0EB0 /* Exceptions for "JrnlWidget" folder in "JrnlWidgetExtension" target */,
+			);
+			path = JrnlWidget;
+			sourceTree = "<group>";
+		};
 		14DE74D92D923B6B0081F2E7 /* Jrnl */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				14DE74E92D923B6C0081F2E7 /* Exceptions for "Jrnl" folder in "Jrnl" target */,
+				14C480322D9CCBF0000D0EB0 /* Exceptions for "Jrnl" folder in "JrnlWidgetExtension" target */,
 			);
 			path = Jrnl;
 			sourceTree = "<group>";
@@ -32,6 +90,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		14C480162D9CC8B9000D0EB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C4801E2D9CC8BA000D0EB0 /* SwiftUI.framework in Frameworks */,
+				14C4801C2D9CC8BA000D0EB0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14DE74D42D923B6B0081F2E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14C4801A2D9CC8BA000D0EB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14C4801B2D9CC8BA000D0EB0 /* WidgetKit.framework */,
+				14C4801D2D9CC8BA000D0EB0 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		14DE74CE2D923B6B0081F2E7 = {
 			isa = PBXGroup;
 			children = (
+				14C480302D9CCB2A000D0EB0 /* JrnlWidgetExtension.entitlements */,
 				14DE74D92D923B6B0081F2E7 /* Jrnl */,
+				14C4801F2D9CC8BA000D0EB0 /* JrnlWidget */,
+				14C4801A2D9CC8BA000D0EB0 /* Frameworks */,
 				14DE74D82D923B6B0081F2E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				14DE74D72D923B6B0081F2E7 /* Jrnl.app */,
+				14C480192D9CC8B9000D0EB0 /* JrnlWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +141,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		14C480182D9CC8B9000D0EB0 /* JrnlWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C4802D2D9CC8BC000D0EB0 /* Build configuration list for PBXNativeTarget "JrnlWidgetExtension" */;
+			buildPhases = (
+				14C480152D9CC8B9000D0EB0 /* Sources */,
+				14C480162D9CC8B9000D0EB0 /* Frameworks */,
+				14C480172D9CC8B9000D0EB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				14C4801F2D9CC8BA000D0EB0 /* JrnlWidget */,
+			);
+			name = JrnlWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = JrnlWidgetExtension;
+			productReference = 14C480192D9CC8B9000D0EB0 /* JrnlWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		14DE74D62D923B6B0081F2E7 /* Jrnl */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14DE74EA2D923B6C0081F2E7 /* Build configuration list for PBXNativeTarget "Jrnl" */;
@@ -68,10 +170,12 @@
 				14DE74D32D923B6B0081F2E7 /* Sources */,
 				14DE74D42D923B6B0081F2E7 /* Frameworks */,
 				14DE74D52D923B6B0081F2E7 /* Resources */,
+				14C4802A2D9CC8BC000D0EB0 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14C480282D9CC8BC000D0EB0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				14DE74D92D923B6B0081F2E7 /* Jrnl */,
@@ -90,9 +194,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					14C480182D9CC8B9000D0EB0 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					14DE74D62D923B6B0081F2E7 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -113,11 +220,19 @@
 			projectRoot = "";
 			targets = (
 				14DE74D62D923B6B0081F2E7 /* Jrnl */,
+				14C480182D9CC8B9000D0EB0 /* JrnlWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		14C480172D9CC8B9000D0EB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14DE74D52D923B6B0081F2E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +243,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		14C480152D9CC8B9000D0EB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14DE74D32D923B6B0081F2E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,12 +259,79 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		14C480282D9CC8BC000D0EB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14C480182D9CC8B9000D0EB0 /* JrnlWidgetExtension */;
+			targetProxy = 14C480272D9CC8BC000D0EB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		14C4802B2D9CC8BC000D0EB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JrnlWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JrnlWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JrnlWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DK.Jrnl.JrnlWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14C4802C2D9CC8BC000D0EB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JrnlWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JrnlWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JrnlWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DK.Jrnl.JrnlWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		14DE74EB2D923B6C0081F2E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Jrnl/Jrnl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 59FP2PXRXK;
@@ -171,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Jrnl/Jrnl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 59FP2PXRXK;
@@ -316,6 +506,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		14C4802D2D9CC8BC000D0EB0 /* Build configuration list for PBXNativeTarget "JrnlWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C4802B2D9CC8BC000D0EB0 /* Debug */,
+				14C4802C2D9CC8BC000D0EB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		14DE74D22D923B6B0081F2E7 /* Build configuration list for PBXProject "Jrnl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
